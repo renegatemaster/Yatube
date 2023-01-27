@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}
+  Технологии
+{% endblock %}
+{% block content %}
+<div class="container 3">
+  <div class="row">    
+    <h1>Вот что я умею</h1>
+    <aside class="col-12 col-md-3 my-3">
+      <p>
+        <i>  
+          Технологии, использованные для разработки сайта:
+        </i>
+      </p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Python
+        </li>
+        <li class="list-group-item">
+          Django
+        </li>
+      </ul>
+    </aside>
+    <article class="col-12 col-md-9 my-5">
+      <p>
+        В разработке этого замечательного сайта мне помогли ребята 
+        из <a href="https://practicum.yandex.ru/">Яндекс.Практикума</a>.<br> 
+        Они научили меня пользоваться Python'ом и Django.<br> 
+        Иногда эти знания достаются восьмичасовыми сессиями жара и боли, но оно того стоит.
+      </p>
+    </article>
+  </div>   
+</div>
+{% endblock %}

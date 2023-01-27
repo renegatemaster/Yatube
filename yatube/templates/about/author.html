@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+  Об авторе проекта
+{% endblock %}
+{% block content %}
+<h1 class="container 3">
+    <i>
+      Привет, меня зовут Глеб. Будем знакомы!
+    </i>  
+</h1>
+<div class="container py-5">
+   <h3>Молодой. Амбициозный. Целеустремлённый.</h3>
+   <article>
+      <p>
+        Мне 23, я окончил бакалавриат, устроился на работу по специальности и понял, что это не моё.<br>
+        Во время работы понравилось взаимодействовать с таблицами и находить элегантные решения сложных вопросов.<br>
+        Теперь я нашёл то, что приносит мне удовольствие.<br>
+        <a class="col-md-3 offset-md-0" href="https://github.com/renegatemaster">
+            Ссылочка на Github :3
+        </a> 
+      </p>
+      <a class="page-link container py-3 col-md-3 offset-md-0" href="{% url 'about:tech' %}">
+        Узнать о технологиях разработки
+      </a>
+   </article>
+</div>
+{% endblock %} 
