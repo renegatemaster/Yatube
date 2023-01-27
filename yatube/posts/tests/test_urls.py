@@ -67,6 +67,14 @@ class TestURL(TestCase):
         response = self.guest_client.get('/posts/1/comment/', follow=True)
         self.assertRedirects(response, '/auth/login/?next=/posts/1/comment/')
 
+    def test_follow_guest(self):
+        response = self.guest_client.get('/follow/', follow=True)
+        self.assertRedirects(response, '/auth/login/?next=/follow/')
+
+    def test_follow_authorized(self):
+        response = self.authorized_client.get('/follow/')
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+
     def test_template(self):
         cache.clear()
         templates_addresses = {
@@ -76,6 +84,7 @@ class TestURL(TestCase):
             '/posts/1/': 'posts/post_detail.html',
             '/posts/1/edit/': 'posts/update_post.html',
             '/create/': 'posts/create_post.html',
+            '/follow/': 'posts/follow.html',
         }
         for address, template in templates_addresses.items():
             with self.subTest(address=address):

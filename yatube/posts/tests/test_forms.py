@@ -75,8 +75,7 @@ class FormTest(TestCase):
     def test_add_comment_in_db(self):
         comments_count = Comment.objects.count()
         form_data = {
-            'text': 'Оригинальный пост',
-            'author': self.user
+            'text': 'Оригинальный пост'
         }
         self.authorized_client.post(
             reverse('posts:add_comment', kwargs={'post_id': self.post.id}),
